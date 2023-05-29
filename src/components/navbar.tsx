@@ -2,7 +2,6 @@
 import {AppBar, Box, Button, Container, Menu, Toolbar, Typography} from "@mui/material";
 import Link from "next/link";
 import WalletButton from "@/components/WalletButton";
-import PersonIcon from "@mui/icons-material/Person";
 
 export default function Navbar() {
     const pages = [
@@ -62,7 +61,6 @@ export default function Navbar() {
                         ))}
                     </Box>
                     <WalletButton/>
-                    <PersonIcon/>
                 </Toolbar>
             </Container>
         </AppBar>
