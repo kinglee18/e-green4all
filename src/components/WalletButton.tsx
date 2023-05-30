@@ -1,12 +1,14 @@
 import {Button, Tooltip, Typography} from "@mui/material";
-import useWeb3Provider from "@/app/web3/web3Connectors";
+
 import PersonIcon from "@mui/icons-material/Person";
+import {useContext} from "react";
+import {Web3Context1} from "@/app/web3/web3Connectors";
 
 const WalletButton = () => {
-    const {connectWallet, disconnect, state} = useWeb3Provider();
+    const {connectWallet, disconnect, isAuthenticated, address} = useContext(Web3Context1);
     const onClick = async () => {
 
-        if (state.isAuthenticated) {
+        if (isAuthenticated) {
             disconnect();
         } else {
             try {
@@ -16,8 +18,8 @@ const WalletButton = () => {
             }
         }
     }
-    if (state.isAuthenticated && state.address) {
-        return <Tooltip title={state.address}>
+    if (isAuthenticated && address) {
+        return <Tooltip title={address}>
             <PersonIcon/>
         </Tooltip>
     }

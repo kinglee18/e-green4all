@@ -1,6 +1,10 @@
 "use client"
 import {Typography, Container, Grid, Paper, Button, CardMedia, Box} from '@mui/material';
 import {styled} from "@mui/system";
+import {Web3Context1} from "@/app/web3/web3Connectors";
+import {useContext} from "react";
+import {getProjectCount} from "@/app/projects";
+import {useProjectsCount} from "@/app/utils/hooks";
 
 
 const ContainerWrapper = styled(Container)(({theme}) => ({
@@ -33,6 +37,11 @@ const ProjectCard = () => {
     );
 };
 const ProjectList = () => {
+    "use client"
+    const {provider} = useContext(Web3Context1);
+    const {data, isLoading, isError} = useProjectsCount(provider, {enabled: provider != null});
+    console.log(data)
+    console.log("sss");
     return (
         <ContainerWrapper>
             <Grid container spacing={3}>
@@ -44,7 +53,9 @@ const ProjectList = () => {
     );
 };
 
-function Projects({Component, pageProps}) {
+async function Projects({Component, pageProps}) {
+
+
     return (
         <Box p={3}>
             <ProjectList/>

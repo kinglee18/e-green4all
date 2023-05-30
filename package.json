@@ -16,16 +16,18 @@
     "@mui/material": "^5.13.2",
     "@mui/styled-engine-sc": "^5.12.0",
     "@mui/styles": "^5.13.2",
+    "@tanstack/react-query": "^4.29.12",
+    "@tanstack/react-query-devtools": "^4.29.12",
     "@types/node": "20.2.3",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
-    "ethers": "^6.4.0",
+    "ethers": "^5.7.0",
     "next": "13.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.0.0-rc.2",
+    "styled-components": "^5.3.1",
     "typescript": "5.0.4"
   }
 }
